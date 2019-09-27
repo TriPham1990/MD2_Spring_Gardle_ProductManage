@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h3>Product List</h3>
+<p>
+    <a th:href="@{/home/create}">Add New Product</a>
+</p>
+<div th:if="${message}">
+    <span th:text="${message}"></span>
+</div><br>
+<table border="1">
+    <tr>
+        <th>Name Product</th>
+        <th>Price product</th>
+        <th>Producer</th>
+    </tr>
+    <th:block th:each="product:${products}">
+        <tr>
+            <td><a th:href="@{/home/__${product.getId()}__/showlist}" th:text="${product.getNameProduct()}"></a></td>
+            <td th:text="${product.getPriceProduct()}"></td>
+            <td th:text="${product.getProducer()}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

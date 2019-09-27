@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Product</title>
+</head>
+<body>
+<form th:object="${product}" th:action="@{/home/save}">
+    <fieldset>
+        <legend>Create New Product</legend>
+        <input type="hidden" th:field="*{id}"/>
+        <label>Name Product :</label><br>
+        <label><input type="text" placeholder="Enter the name product." th:field="*{nameProduct}"/></label><br>
+        <label>Price Product :</label><br>
+        <label><input type="text" placeholder="Enter the price product." th:field="*{priceProduct}"/></label><br>
+        <label>Producer :</label><br>
+        <label><input type="text" placeholder="Enter the producer." th:field="*{producer}"/></label><br><br>
+        <label><input type="submit" value="Submit"/></label>
+    </fieldset>
+</form>
+</body>
+</html>

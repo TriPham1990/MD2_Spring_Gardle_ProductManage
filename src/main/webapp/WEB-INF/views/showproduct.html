@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Product</title>
+</head>
+<body>
+<form th:action="@{/home/__${product.getId()}__/delete}" method="get">
+    <fieldset>
+        <p>
+            <a th:href="@{/home}">Back To Home</a>
+        </p>
+        <legend><h2>Product Detail</h2></legend>
+        <label th:text="'Name Product : ' + ${product.getNameProduct()}"></label><br>
+        <label th:text="'Price Product : ' + ${product.getPriceProduct()}"></label><br>
+        <label th:text="'Producer : ' + ${product.getProducer()}"></label>
+        <p>
+            <a th:href="@{/home/__${product.getId()}__/edit}">Edit</a>
+        </p>
+        <input type="submit" value="Delete"/>
+    </fieldset>
+</form>
+
+</body>
+</html>
